@@ -13,6 +13,51 @@ import {
     Gagan,
     Priya,
 } from "./assets/images/tech/exports"
+import Blog from "./containers/Blog";
+import Home from "./containers/Home";
+import Jobs from "./containers/Jobs";
+import Life from "./containers/Life";
+import News from "./containers/News";
+import Tech from "./containers/Tech";
+
+export const navigation = [
+    {
+      component: <Home/>,
+      id: "0",
+      title: "Home",
+      url: "",
+    },
+    {
+      component: <Tech/>,
+      id: "1",
+      title: "Tech at Meesho",
+      url: "tech",
+    },
+    {
+      component: <Life/>,
+      id: "2",
+      title: "Life at Meesho",
+      url: "life",
+    },
+    {
+      component: <Blog/>,
+      id: "4",
+      title: "Blog",
+      url: "blog",
+    },
+    {
+      component: <News/>,
+      id: "5",
+      title: "Newsroom",
+      url: "news",
+    },
+    {
+        component: <Jobs/>,
+        id: "6",
+        title: "Join Us",
+        url: "jobs",
+      },
+  ];
 export const home = {
     header:[
         "Building for a billion Indians",

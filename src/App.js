@@ -1,32 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import { home, tech } from './constants';
+import { home, tech, navigation } from './constants';
+import Navbar from './components/Navbar';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './containers/Home';
+import Tech from './containers/Tech';
+
 
 function App() {
-  console.log(tech.verticals.product.people);
+  // console.log(tech.verticals.product.people);
   return (
+    <Router>
     <div className="App">
-      {
-        tech.verticals.product.features.map((item, index)=>(
-          <img key={index} src={item.image} height={100}/>
-        ))
-      }
-      {
-        tech.verticals.design.features.map((item, index)=>(
-          <img key={index} src={item.image} height={100}/>
-        ))
-      }
-      {
-        tech.verticals.engineering.features.map((item, index)=>(
-          <img key={index} src={item.image} height={100}/>
-        ))
-      }
-      {
-        tech.verticals.dataScience.features.map((item, index)=>(
-          <img key={index} src={item.image} height={100}/>
-        ))
-      }
-    </div>
+       <Navbar/>
+       <Routes>
+        {navigation.map((item)=>(
+              <Route key={item.id} path={`/${item.url}`} element={item.component}/>
+          ))}
+      </Routes>
+      </div>
+    </Router>
+      
   );
 }
 
