@@ -18,8 +18,8 @@ const Navbar = () => {
             <NavLink
               key={path.id}
               to={path.path}
-              className={({ isActive }, index) =>
-                `${isActive ? "text-green-500" : "text-white"} ${
+              className={({ isActive }) =>
+                `${isActive && index != paths.length - 1 ? "text-green-500" : ""} ${
                   index === paths.length - 1 ? "bg-yellow-500 py-2 px-6 text-[#580A46] uppercase rounded-full tracking-widest font-normal" : ""
                 }`
               }
